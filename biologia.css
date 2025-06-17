@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --preto: #000000;
+    --marinho: #493D9E;
+    --amarelo-claro: #FFF2AF;
+    --roxo-claro: #B2A5FF;
+    --verde: #99BC85;
+    --azul-claro: #E4EFE7;
+    --branco: #FFFFFF;
+    --marron-claro: #FAF1E6;
+}
+
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: var(--azul-claro);
+    color: var(--amarelo-claro);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    background-color: var(--marinho);
+    padding: 1rem;
+    position: relative;
+    justify-content: center;
+}
+
+
+.menu-disciplina {
+    width: 20%;
+    display: inline-block;
+}
+
+.botao-disciplinas {
+    cursor: pointer;
+    font-size: 2rem;
+    background: none;
+    background-color: var(--preto);
+    border: none;
+    padding: 1.05rem 1.5rem;
+    color: var(--roxo-claro);
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.lista-vertical {
+    display: none;
+    position: absolute;
+    background-color: var(--roxo-claro);
+    box-shadow: 0 2px 5px var(--marinho);
+    min-width: 190px;
+    z-index: 1;
+    left: 1rem;
+    top: 100%;
+}
+
+.lista-vertical a {
+    color: var(--preto);
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    font-size: 2rem;
+    display: block;
+    text-align: center;
+}
+
+.lista-vertical a:hover {
+    background-color: var(--amarelo-claro);
+}
+
+#menu-toggle:checked~.lista-vertical {
+    display: block;
+}
+
+#menu-toggle:checked+.botao-disciplinas {
+    background-color: var(--amarelo-claro);
+}
+
+.links-principais {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.lista-horizontal {
+    list-style: none;
+    display: flex;
+    font-size: 2rem;
+    gap: 17rem;
+}
+
+
+.lista-horizontal a {
+    text-decoration: none;
+    color: var(--amarelo-claro);
+}
+
+.lista-horizontal a:hover {
+    color: var(--preto);
+}
+
+main {
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--verde);
+    margin-bottom: 60px;
+    font-size: 4rem;
+}
+
+.biologia-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.conteudo {
+    background-color: var(--branco);
+    border-radius: 10px;
+    padding: 30px;
+    width: 80%;
+    min-width: 280px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.conteudo:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.conteudo h2 {
+    display: flex;
+    justify-content: center;
+    color: var(--verde);
+    margin-bottom: 15px;
+    font-size: 2.8rem;
+}
+
+.conteudo p {
+    line-height: 1.6;
+    color: var(--preto);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.conteudo ul {
+    list-style-type: none;
+    font-size: 1.8rem;
+}
+
+.conteudo ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--azul-claro);
+    transition: transform 0.5s ease;
+    color: var(--preto);
+}
+
+.conteudo ul li:hover {
+    transform: translateX(10px);
+    color: var(--verde);
+}
+
+.home {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.home a {
+    font-size: 2rem;
+    color: var(--verde);
+}
+
+.conteudo ul li .block {
+    display: none;
+}
+
+.conteudo ul li:hover .block {
+    display: block;
+    text-align: justify;
+    color: var(--marinho);
+    margin-bottom: 5px;
+}
+
+.opacidade {
+    display: block;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 1.5s ease, max-height 1.5s ease;
+    color: var(--marinho);
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+}
+
+.conteudo ul li:hover .opacidade {
+    opacity: 1;
+    max-height: 320px;
+    text-align: justify;
+    color: var(--marinho);
+    margin-bottom: 5px;
+}
