@@ -50,6 +50,7 @@ main {
     align-items: center;
     gap: 50px;
     flex-wrap: wrap;
+    grid-column: auto;
 }
 
 .disciplina {
